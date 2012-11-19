@@ -449,7 +449,7 @@ run (const gchar      *name,
       /* We need the active layer in order to use gimp_image_export */
       temp = gimp_image_get_active_drawable (image_id);
       if (temp == -1)
-        exported = gimp_export_image (&image_id, &temp, NULL, capabilities) == GIMP_EXPORT_EXPORT;
+        exported = gimp_export_image (&image_id, &temp, _("Portable Document Format"), capabilities) == GIMP_EXPORT_EXPORT;
       else
         exported = FALSE;
       type = gimp_image_base_type (image_id);

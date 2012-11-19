@@ -136,7 +136,11 @@ gimp_plug_in_manager_register_save_handler (GimpPlugInManager *manager,
   gimp_plug_in_procedure_set_file_proc (file_proc,
                                         extensions, prefixes, NULL);
 
+#ifdef CRAZY_EXPORT
   if (file_procedure_in_group (file_proc, FILE_PROCEDURE_GROUP_SAVE))
+#else
+  if (1)
+#endif
     {
       if (! g_slist_find (manager->save_procs, file_proc))
         manager->save_procs = g_slist_prepend (manager->save_procs, file_proc);

@@ -206,6 +206,7 @@ file_open_image (Gimp                *gimp,
     {
       file_open_handle_color_profile (image, context, progress, run_mode);
 
+#ifdef CRAZY_EXPORT
       if (file_open_file_proc_is_import (file_proc))
         {
           /* Remember the import source */
@@ -214,6 +215,7 @@ file_open_image (Gimp                *gimp,
           /* We shall treat this file as an Untitled file */
           gimp_image_set_uri (image, NULL);
         }
+#endif
     }
 
   return image;

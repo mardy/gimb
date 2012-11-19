@@ -142,6 +142,7 @@ static const GimpEnumActionEntry file_save_actions[] =
     GIMP_SAVE_MODE_SAVE_AND_CLOSE, FALSE,
     GIMP_HELP_FILE_SAVE },
 
+#ifdef CRAZY_EXPORT
   { "file-export-to", NULL,
     NC_("file-action", "Export to"), "<primary>E",
     NC_("file-action", "Export the image again"),
@@ -159,6 +160,7 @@ static const GimpEnumActionEntry file_save_actions[] =
     NC_("file-action", "Export the image to various file formats such as PNG or JPEG"),
     GIMP_SAVE_MODE_EXPORT, FALSE,
     GIMP_HELP_FILE_EXPORT }
+#endif
 };
 
 void
@@ -280,13 +282,16 @@ file_actions_update (GimpActionGroup *group,
   SET_SENSITIVE ("file-save-as",         drawable);
   SET_SENSITIVE ("file-save-a-copy",     drawable);
   SET_SENSITIVE ("file-revert",          image && (gimp_image_get_uri (image) || source));
+#ifdef CRAZY_EXPORT
   SET_SENSITIVE ("file-export-to",       drawable);
   SET_VISIBLE   ("file-export-to",       ! show_overwrite);
   SET_SENSITIVE ("file-overwrite",       show_overwrite);
   SET_VISIBLE   ("file-overwrite",       show_overwrite);
   SET_SENSITIVE ("file-export",          drawable);
+#endif
   SET_SENSITIVE ("file-create-template", image);
 
+#ifdef CRAZY_EXPORT
   if (export)
     {
       gchar *label = file_actions_create_label (_("Export to %s"), export);
@@ -305,6 +310,7 @@ file_actions_update (GimpActionGroup *group,
       gimp_action_group_set_action_label (group,
                                           "file-export-to", _("Export to"));
     }
+#endif
 
   /*  needed for the empty display  */
   SET_SENSITIVE ("file-close-all", image);
