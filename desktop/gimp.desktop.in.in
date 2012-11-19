@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-_Name=GNU Image Manipulation Program
+_Name=GIMB image editor
 _GenericName=Image Editor
 _Comment=Create images and edit photographs
 Exec=@GIMP_COMMAND@ %U
