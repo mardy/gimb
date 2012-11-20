@@ -20,10 +20,10 @@
 
 
 #define GIMP_ACRONYM \
-  _("GIMP")
+  _("GIMB")
 
 #define GIMP_NAME \
-  _("GNU Image Manipulation Program")
+  _("GIMP's Image Manipulation Brother")
 
 /* The year of the last commit (UTC) will be inserted into this string. */
 #define GIMP_COPYRIGHT \
