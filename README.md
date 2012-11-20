@@ -3,6 +3,18 @@ GIMB is a branch of the popular image manipulation program
 [GIMP](http://www.gimp.org) which features a file saving functionality
 similar to what was implemented until GIMP 2.6.
 
+Development happens in github; for questions please refer to
+the [GIMB project Google group](http://groups.google.com/group/gimb-project) or
+join the #gimb IRC channel in Freenode.
+
+
+### Try it out
+GIMB is currently available in Ubuntu 12.10 by using the following PPA:
+[ppa:mardy/gimb](https://launchpad.net/~mardy/+archive/gimb)
+
+Any help in making it available in other distributions is very welcome.
+
+
 ### What is wrong with GIMP 2.8?
 While GIMP 2.8 continues to be an excellent application, it drastically
 changed the way of dealing with JPEG, PNG, and all other non-XCF files.
